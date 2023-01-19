@@ -20,12 +20,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{88DF95
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C3209CB8-58FD-4458-AFD0-BD73FCA04C8A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.Api", "Source\School.Api\School.Api.csproj", "{3A9CF05D-0661-4254-800C-CFACB92A5C12}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A9CF05D-0661-4254-800C-CFACB92A5C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A9CF05D-0661-4254-800C-CFACB92A5C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A9CF05D-0661-4254-800C-CFACB92A5C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A9CF05D-0661-4254-800C-CFACB92A5C12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{975571FE-6DE2-40E4-A246-8DE33CB4742D} = {0963E00C-8D1F-4923-9557-ADCDB7264052}
+		{3A9CF05D-0661-4254-800C-CFACB92A5C12} = {88DF95D1-D45D-4B8A-9FE0-C298C5EC4880}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FF3143D3-21EF-4131-A484-32252A765E6D}
