@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "8c5a6bb3-d21c-4b76-a7df-f847d0e9a88a",
+		"name": "Small-School-Solution",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24752915"
+	},
+	"item": [
+		{
+			"name": "Services-School",
+			"item": [
+				{
+					"name": "Hello-World-Endpoints",
+					"item": [
+						{
+							"name": "GET /",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostUrl}}",
+									"host": [
+										"{{hostUrl}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET /hw",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostUrl}}/hw",
+									"host": [
+										"{{hostUrl}}"
+									],
+									"path": [
+										"hw"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET /api",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostUrl}}/api",
+									"host": [
+										"{{hostUrl}}"
+									],
+									"path": [
+										"api"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET /api/v1",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostUrl}}/api/v1",
+									"host": [
+										"{{hostUrl}}"
+									],
+									"path": [
+										"api",
+										"v1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
