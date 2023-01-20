@@ -15,18 +15,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PostmanCollections", "PostmanCollections", "{4473BCF8-0D63-4FCF-A33C-525EA886EF75}"
+	ProjectSection(SolutionItems) = preProject
+		PostmanCollections\Small-School-Solution-Local.postman_environment.json = PostmanCollections\Small-School-Solution-Local.postman_environment.json
+		PostmanCollections\Small-School-Solution.postman_collection.json = PostmanCollections\Small-School-Solution.postman_collection.json
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{88DF95D1-D45D-4B8A-9FE0-C298C5EC4880}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C3209CB8-58FD-4458-AFD0-BD73FCA04C8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.Api", "Source\School.Api\School.Api.csproj", "{3A9CF05D-0661-4254-800C-CFACB92A5C12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "School.Api", "Source\School.Api\School.Api.csproj", "{3A9CF05D-0661-4254-800C-CFACB92A5C12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.ApplicationCore", "Source\School.ApplicationCore\School.ApplicationCore.csproj", "{71EA63FB-6A3D-49A5-9985-1D8A50F350CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "School.ApplicationCore", "Source\School.ApplicationCore\School.ApplicationCore.csproj", "{71EA63FB-6A3D-49A5-9985-1D8A50F350CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.Business", "Source\School.Business\School.Business.csproj", "{C1020F93-CBE8-4FA5-9338-C437F91CE018}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "School.Business", "Source\School.Business\School.Business.csproj", "{C1020F93-CBE8-4FA5-9338-C437F91CE018}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.Data", "Source\School.Data\School.Data.csproj", "{424189E7-CAB8-4AFF-B1D3-FCD6D2C64909}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "School.Data", "Source\School.Data\School.Data.csproj", "{424189E7-CAB8-4AFF-B1D3-FCD6D2C64909}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
