@@ -12,6 +12,8 @@
             public static string Api { get; } = "/api";
 
             public static string ApiV1 { get; } = "/api/v1";
+
+            public static string ApiUsers { get; } = "/api/users/{id}";
         }
 
         public static class CoursesEndpoints

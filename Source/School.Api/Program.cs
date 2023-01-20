@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using School.Business;
 using School.Data.Dtos;
 using static School.ApplicationCore.Common.Constants;
@@ -11,6 +12,15 @@ app.MapGet(HelloWorldEndpoints.Root, () => "Hello Minimal API World from Root !!
 app.MapGet(HelloWorldEndpoints.HelloWorld, () =>
 {
     return ApiResponseDto<string>.Create("Hello Minimal API World from /hw !!");
+});
+
+app.MapGet(HelloWorldEndpoints.ApiUsers, ([FromRoute] string id, [FromQuery] string name) =>
+{
+    return ApiResponseDto<dynamic>.Create(new
+    {
+        UserId = id,
+        Message = $"Hello {name}, Welcome to Minimal API World !!"
+    });
 });
 
 app.MapGet(HelloWorldEndpoints.Api, DefaultResponseBusiness.SendDefaultApiEndpointOutput);
