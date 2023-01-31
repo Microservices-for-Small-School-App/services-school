@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using School.Api.Business;
 using School.Api.Data.Dtos;
-using School.Business;
 using static School.Api.ApplicationCore.Common.Constants;
 
 var builder = WebApplication.CreateBuilder(args);
