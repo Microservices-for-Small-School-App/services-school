@@ -22,6 +22,10 @@ app.MapGet(HelloWorldEndpoints.HelloWorld, () =>
     return ApiResponseDto<string>.Create("Hello Minimal API World from /hw !!");
 });
 
+app.MapGet(HelloWorldEndpoints.Api, DefaultResponseBusiness.SendDefaultApiEndpointOutput);
+
+app.MapGet(HelloWorldEndpoints.ApiV1, () => DefaultResponseBusiness.SendDefaultApiEndpointV1Output());
+
 app.MapGet(HelloWorldEndpoints.ApiUsers, ([FromRoute] string id, [FromQuery] string name) =>
 {
     return ApiResponseDto<dynamic>.Create(new
@@ -31,9 +35,14 @@ app.MapGet(HelloWorldEndpoints.ApiUsers, ([FromRoute] string id, [FromQuery] str
     });
 });
 
-app.MapGet(HelloWorldEndpoints.Api, DefaultResponseBusiness.SendDefaultApiEndpointOutput);
-
-app.MapGet(HelloWorldEndpoints.ApiV1, () => DefaultResponseBusiness.SendDefaultApiEndpointV1Output());
+app.MapGet(HelloWorldEndpoints.ApiUsers, ([FromRoute] string id, [FromQuery] string name) =>
+{
+    return ApiResponseDto<dynamic>.Create(new
+    {
+        UserId = id,
+        Message = $"Hello {name}, Welcome to Minimal API World !!"
+    });
+});
 #endregion
 
 #region Courses Endpoints
@@ -47,6 +56,8 @@ app.MapGet(CoursesEndpoints.Root, async ([FromServices] SchoolDbContext schoolDb
 
 if (app.Environment.IsDevelopment())
 {
+
+    // TODO: To be removed once we have .sqlproj
     using var scope = app.Services.CreateScope();
     using var context = scope.ServiceProvider.GetService<SchoolDbContext>();
     _ = (context?.Database.EnsureCreated());

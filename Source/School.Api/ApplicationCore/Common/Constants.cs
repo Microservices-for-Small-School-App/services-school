@@ -13,6 +13,8 @@
 
             public static string ApiV1 { get; } = "/api/v1";
 
+            public static string ApiPostUser { get; } = "/api/users";
+
             public static string ApiUsers { get; } = "/api/users/{id}";
         }
 

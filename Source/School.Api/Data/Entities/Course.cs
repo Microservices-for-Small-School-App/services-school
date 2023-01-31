@@ -7,7 +7,6 @@
 
         public string? Name { get; set; }
 
-        // Duration in Weeks
         public int Duration { get; set; }
 
         public string? Description { get; set; }
