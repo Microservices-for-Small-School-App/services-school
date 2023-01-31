@@ -77,6 +77,60 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "GET /api/users/{id}?name={value}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:7026/api/users/U101?name=SriVaru",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7026",
+									"path": [
+										"api",
+										"users",
+										"U101"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "SriVaru"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST /api/users",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:7026/api/users/U101?name=SriVaru",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7026",
+									"path": [
+										"api",
+										"users",
+										"U101"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "SriVaru"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				}
