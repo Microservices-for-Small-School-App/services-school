@@ -35,12 +35,13 @@ app.MapGet(HelloWorldEndpoints.ApiUsers, ([FromRoute] string id, [FromQuery] str
     });
 });
 
-app.MapGet(HelloWorldEndpoints.ApiUsers, ([FromRoute] string id, [FromQuery] string name) =>
+app.MapPost(HelloWorldEndpoints.ApiPostUser, ([FromBody] PersonDto person) =>
 {
     return ApiResponseDto<dynamic>.Create(new
     {
-        UserId = id,
-        Message = $"Hello {name}, Welcome to Minimal API World !!"
+        UserId = person.Id,
+        UserName = person.Name,
+        DateRequested = DateTime.UtcNow
     });
 });
 #endregion
@@ -67,3 +68,12 @@ app.Run();
 
 
 
+//app.MapPost(HelloWorldEndpoints.ApiPostUser, ([FromBody] object personJson) =>
+//{
+//    var person = JsonConvert.DeserializeObject<dynamic>(personJson.ToString()!)!;
+//    return ApiResponseDto<dynamic>.Create(new
+//    {
+//        UserId = $"{person.id}",
+//        Message = $"Hello {person.name}, Welcome to Minimal API World !!"
+//    });
+//});
