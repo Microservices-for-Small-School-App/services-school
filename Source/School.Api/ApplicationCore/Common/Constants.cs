@@ -29,6 +29,11 @@
 
             public static string ActionById { get; } = "/api/students/{Id}";
         }
+
+        public static class InMemoryDatabase
+        {
+            public static string Name { get; } = "SchoolDatabase";
+        }
     }
 
 }
