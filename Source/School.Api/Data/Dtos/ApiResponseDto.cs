@@ -1,4 +1,4 @@
-﻿namespace School.Data.Dtos
+﻿namespace School.Api.Data.Dtos
 {
 
     public record ApiResponseDto<T>
