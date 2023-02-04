@@ -27,7 +27,7 @@ app.MapGet(HelloWorldEndpoints.ApiV1, () => DefaultResponseBusiness.SendDefaultA
 #endregion
 
 #region User Endpoints
-app.MapGet(HelloWorldEndpoints.ApiUsers, ([FromRoute] string id, [FromQuery] string name) =>
+app.MapGet(UsersEndpoints.ApiUsers, ([FromRoute] string id, [FromQuery] string name) =>
 {
     return ApiResponseDto<dynamic>.Create(new
     {
@@ -36,7 +36,7 @@ app.MapGet(HelloWorldEndpoints.ApiUsers, ([FromRoute] string id, [FromQuery] str
     });
 });
 
-app.MapPost(HelloWorldEndpoints.ApiPostUser, ([FromBody] PersonDto person) =>
+app.MapPost(UsersEndpoints.ApiPostUser, ([FromBody] PersonDto person) =>
 {
     return ApiResponseDto<dynamic>.Create(new
     {
@@ -55,7 +55,6 @@ app.MapGet(CoursesEndpoints.Root, async ([FromServices] SchoolDbContext schoolDb
 
 if (app.Environment.IsDevelopment())
 {
-
     // TODO: To be removed once we have .sqlproj
     using var scope = app.Services.CreateScope();
     using var context = scope.ServiceProvider.GetService<SchoolDbContext>();
