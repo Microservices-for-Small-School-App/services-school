@@ -25,7 +25,9 @@ app.MapGet(HelloWorldEndpoints.HelloWorld, () =>
 app.MapGet(HelloWorldEndpoints.Api, DefaultResponseBusiness.SendDefaultApiEndpointOutput);
 
 app.MapGet(HelloWorldEndpoints.ApiV1, () => DefaultResponseBusiness.SendDefaultApiEndpointV1Output());
+#endregion
 
+#region User Endpoints
 app.MapGet(HelloWorldEndpoints.ApiUsers, ([FromRoute] string id, [FromQuery] string name) =>
 {
     return ApiResponseDto<dynamic>.Create(new
@@ -50,9 +52,7 @@ app.MapPost(HelloWorldEndpoints.ApiPostUser, ([FromBody] PersonDto person) =>
 app.MapGet(CoursesEndpoints.Root, async ([FromServices] SchoolDbContext schoolDbContext) =>
 {
     return Results.Ok(await schoolDbContext.Courses.ToListAsync());
-})
-    .WithTags(nameof(Course))
-    .WithName("GetAllCourses");
+});
 #endregion
 
 if (app.Environment.IsDevelopment())
