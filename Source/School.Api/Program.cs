@@ -43,7 +43,6 @@ app.MapPost(HelloWorldEndpoints.ApiPostUser, ([FromBody] PersonDto person) =>
     {
         UserId = person.Id,
         UserName = person.Name,
-        DateRequested = DateTime.UtcNow
     });
 });
 #endregion
