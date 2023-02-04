@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using School.Api.Business;
 using School.Api.Data.Dtos;
-using School.Api.Data.Entities;
 using School.Api.Persistence;
 using static School.Api.ApplicationCore.Common.Constants;
 
