@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using School.Api.Business;
 using School.Api.Data.Dtos;
-using School.Api.Data.Entities;
 using School.Api.Persistence;
 using static School.Api.ApplicationCore.Common.Constants;
 
@@ -25,7 +24,9 @@ app.MapGet(HelloWorldEndpoints.HelloWorld, () =>
 app.MapGet(HelloWorldEndpoints.Api, DefaultResponseBusiness.SendDefaultApiEndpointOutput);
 
 app.MapGet(HelloWorldEndpoints.ApiV1, () => DefaultResponseBusiness.SendDefaultApiEndpointV1Output());
+#endregion
 
+#region User Endpoints
 app.MapGet(HelloWorldEndpoints.ApiUsers, ([FromRoute] string id, [FromQuery] string name) =>
 {
     return ApiResponseDto<dynamic>.Create(new
@@ -41,7 +42,6 @@ app.MapPost(HelloWorldEndpoints.ApiPostUser, ([FromBody] PersonDto person) =>
     {
         UserId = person.Id,
         UserName = person.Name,
-        DateRequested = DateTime.UtcNow
     });
 });
 #endregion
@@ -50,9 +50,7 @@ app.MapPost(HelloWorldEndpoints.ApiPostUser, ([FromBody] PersonDto person) =>
 app.MapGet(CoursesEndpoints.Root, async ([FromServices] SchoolDbContext schoolDbContext) =>
 {
     return Results.Ok(await schoolDbContext.Courses.ToListAsync());
-})
-    .WithTags(nameof(Course))
-    .WithName("GetAllCourses");
+});
 #endregion
 
 if (app.Environment.IsDevelopment())

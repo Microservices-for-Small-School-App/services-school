@@ -14,9 +14,10 @@ namespace School.Api.Persistence.SeedData
                 new
                 {
                     Id = Guid.NewGuid(),
-                    Title = "Minimal API Development",
+                    CourseId = Guid.NewGuid(),
+                    Name = "Minimal API",
                     Duration = 3,
-                    Description = "C#",
+                    Description = "Minimal API for Beginners",
                     CreatedDate = DateTime.UtcNow,
                     CreatedBy = "Admin",
                     ModifiedDate = DateTime.UtcNow,
@@ -25,9 +26,10 @@ namespace School.Api.Persistence.SeedData
                 new
                 {
                     Id = Guid.NewGuid(),
-                    Title = "Ultimate API Development",
+                    CourseId = Guid.NewGuid(),
+                    Name = "Blazor WASM - Part 1",
                     Duration = 5,
-                    Description = "Blazor WASM",
+                    Description = "Blazor WASM for Beginners",
                     CreatedDate = DateTime.UtcNow,
                     CreatedBy = "Admin",
                     ModifiedDate = DateTime.UtcNow,
