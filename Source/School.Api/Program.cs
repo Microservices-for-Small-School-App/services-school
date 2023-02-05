@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using School.Api.Configurations;
 using School.Api.Endpoints;
 using School.Api.Persistence;
 
@@ -7,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add the Services
 _ = builder.Services.AddDbContext<SchoolDbContext>(options =>
                 options.UseInMemoryDatabase(InMemoryDatabase.Name));
+
+_ = builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
 
 var app = builder.Build();
 
