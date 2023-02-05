@@ -25,7 +25,9 @@
 
         public static class CoursesRoutes
         {
-            public static string Root { get; } = "/api/courses";
+            public static string Prefix { get; } = "/api/courses";
+
+            public static string Root { get; } = "/";
 
             public static string ActionById { get; } = "/api/courses/{Id}";
         }
