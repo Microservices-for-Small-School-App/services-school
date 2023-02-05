@@ -77,6 +77,38 @@
 								}
 							},
 							"response": []
+						}
+					]
+				},
+				{
+					"name": "Users-Endpoints",
+					"item": [
+						{
+							"name": "POST /api/users",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"U101\",\r\n    \"name\": \"Sri Varu\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostUrl}}/api/users",
+									"host": [
+										"{{hostUrl}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
 						},
 						{
 							"name": "GET /api/users/{id}?name={value}",
@@ -84,12 +116,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://localhost:7026/api/users/U101?name=SriVaru",
-									"protocol": "https",
+									"raw": "{{hostUrl}}/api/users/U101?name=SriVaru",
 									"host": [
-										"localhost"
+										"{{hostUrl}}"
 									],
-									"port": "7026",
 									"path": [
 										"api",
 										"users",
@@ -104,29 +134,25 @@
 								}
 							},
 							"response": []
-						},
+						}
+					]
+				},
+				{
+					"name": "Courses-Endpoints",
+					"item": [
 						{
-							"name": "POST /api/users",
+							"name": "GET /api/courses",
 							"request": {
-								"method": "POST",
+								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://localhost:7026/api/users/U101?name=SriVaru",
-									"protocol": "https",
+									"raw": "{{hostUrl}}/api/courses",
 									"host": [
-										"localhost"
+										"{{hostUrl}}"
 									],
-									"port": "7026",
 									"path": [
 										"api",
-										"users",
-										"U101"
-									],
-									"query": [
-										{
-											"key": "name",
-											"value": "SriVaru"
-										}
+										"courses"
 									]
 								}
 							},
