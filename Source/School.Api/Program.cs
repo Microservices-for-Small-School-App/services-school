@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using School.Api.Business;
 using School.Api.Data.Dtos;
 using School.Api.Data.Entities;
+using School.Api.Endpoints;
 using School.Api.Persistence;
 using static School.Api.ApplicationCore.Common.Constants;
 
@@ -14,21 +14,8 @@ _ = builder.Services.AddDbContext<SchoolDbContext>(options =>
 
 var app = builder.Build();
 
-# region Root & Hello World Endpoints
-app.MapGet(HelloWorldEndpoints.Root, () => "Hello Minimal API World from Root !!");
-
-app.MapGet(HelloWorldEndpoints.HelloWorld, () =>
-{
-    return ApiResponseDto<string>.Create("Hello Minimal API World from /hw !!");
-});
-
-app.MapGet(HelloWorldEndpoints.Api, DefaultResponseBusiness.SendDefaultApiEndpointOutput);
-
-app.MapGet(HelloWorldEndpoints.ApiV1, () => DefaultResponseBusiness.SendDefaultApiEndpointV1Output());
-#endregion
-
 #region User Endpoints
-app.MapGet(UsersEndpoints.ApiUsers, ([FromRoute] string id, [FromQuery] string name) =>
+app.MapGet(UsersRoutes.ApiUsers, ([FromRoute] string id, [FromQuery] string name) =>
 {
     return ApiResponseDto<dynamic>.Create(new
     {
@@ -37,7 +24,7 @@ app.MapGet(UsersEndpoints.ApiUsers, ([FromRoute] string id, [FromQuery] string n
     });
 });
 
-app.MapPost(UsersEndpoints.ApiPostUser, ([FromBody] PersonDto person) =>
+app.MapPost(UsersRoutes.ApiPostUser, ([FromBody] PersonDto person) =>
 {
     return ApiResponseDto<dynamic>.Create(new
     {
@@ -48,7 +35,7 @@ app.MapPost(UsersEndpoints.ApiPostUser, ([FromBody] PersonDto person) =>
 #endregion
 
 #region Courses Endpoints
-app.MapGet(CoursesEndpoints.Root, async ([FromServices] SchoolDbContext schoolDbContext) =>
+app.MapGet(CoursesRoutes.Root, async ([FromServices] SchoolDbContext schoolDbContext) =>
 {
     var coursesResponse = ApiResponseDto<IEnumerable<Course>>.Create(await schoolDbContext.Courses.ToListAsync());
 
@@ -64,16 +51,7 @@ if (app.Environment.IsDevelopment())
     _ = (context?.Database.EnsureCreated());
 }
 
+// Endpoints
+app.MapHelloWorldEndpoints();
+
 app.Run();
-
-
-
-//app.MapPost(HelloWorldEndpoints.ApiPostUser, ([FromBody] object personJson) =>
-//{
-//    var person = JsonConvert.DeserializeObject<dynamic>(personJson.ToString()!)!;
-//    return ApiResponseDto<dynamic>.Create(new
-//    {
-//        UserId = $"{person.id}",
-//        Message = $"Hello {person.name}, Welcome to Minimal API World !!"
-//    });
-//});

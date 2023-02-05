@@ -3,7 +3,7 @@
 
     public static class Constants
     {
-        public static class HelloWorldEndpoints
+        public static class HelloWorldRoutes
         {
             public static string Root { get; } = "/";
 
@@ -14,25 +14,18 @@
             public static string ApiV1 { get; } = "/api/v1";
         }
 
-        public static class UsersEndpoints
+        public static class UsersRoutes
         {
             public static string ApiPostUser { get; } = "/api/users";
 
             public static string ApiUsers { get; } = "/api/users/{id}";
         }
 
-        public static class CoursesEndpoints
+        public static class CoursesRoutes
         {
             public static string Root { get; } = "/api/courses";
 
             public static string ActionById { get; } = "/api/courses/{Id}";
-        }
-
-        public static class StudentsEndpoints
-        {
-            public static string Root { get; } = "/api/students";
-
-            public static string ActionById { get; } = "/api/students/{Id}";
         }
 
         public static class InMemoryDatabase
