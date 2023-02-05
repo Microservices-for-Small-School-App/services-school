@@ -14,26 +14,6 @@ _ = builder.Services.AddDbContext<SchoolDbContext>(options =>
 
 var app = builder.Build();
 
-#region User Endpoints
-app.MapGet(UsersRoutes.ApiUsers, ([FromRoute] string id, [FromQuery] string name) =>
-{
-    return ApiResponseDto<dynamic>.Create(new
-    {
-        UserId = id,
-        Message = $"Hello {name}, Welcome to Minimal API World !!"
-    });
-});
-
-app.MapPost(UsersRoutes.ApiPostUser, ([FromBody] PersonDto person) =>
-{
-    return ApiResponseDto<dynamic>.Create(new
-    {
-        UserId = person.Id,
-        UserName = person.Name,
-    });
-});
-#endregion
-
 #region Courses Endpoints
 app.MapGet(CoursesRoutes.Root, async ([FromServices] SchoolDbContext schoolDbContext) =>
 {
@@ -53,5 +33,6 @@ if (app.Environment.IsDevelopment())
 
 // Endpoints
 app.MapHelloWorldEndpoints();
+app.MapUserEndpoints();
 
 app.Run();

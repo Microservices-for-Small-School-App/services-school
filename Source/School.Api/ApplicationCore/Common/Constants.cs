@@ -16,9 +16,11 @@
 
         public static class UsersRoutes
         {
-            public static string ApiPostUser { get; } = "/api/users";
+            public static string Prefix { get; } = "/api/users";
 
-            public static string ApiUsers { get; } = "/api/users/{id}";
+            public static string Root { get; } = "/";
+
+            public static string ActionById { get; } = "/{id}";
         }
 
         public static class CoursesRoutes
