@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using School.Api.Business;
 using School.Api.Data.Dtos;
+using School.Api.Data.Entities;
 using School.Api.Persistence;
 using static School.Api.ApplicationCore.Common.Constants;
 
@@ -49,7 +50,9 @@ app.MapPost(UsersEndpoints.ApiPostUser, ([FromBody] PersonDto person) =>
 #region Courses Endpoints
 app.MapGet(CoursesEndpoints.Root, async ([FromServices] SchoolDbContext schoolDbContext) =>
 {
-    return Results.Ok(await schoolDbContext.Courses.ToListAsync());
+    var coursesResponse = ApiResponseDto<IEnumerable<Course>>.Create(await schoolDbContext.Courses.ToListAsync());
+
+    return Results.Ok(coursesResponse);
 });
 #endregion
 
