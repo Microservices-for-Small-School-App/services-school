@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using School.Api.Data.Dtos;
-using static School.Api.ApplicationCore.Common.Constants;
+// using static School.Api.ApplicationCore.Common.Constants;
 
 namespace School.Api.Endpoints
 {

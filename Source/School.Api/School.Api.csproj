@@ -11,4 +11,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Using Include="School.Api.ApplicationCore.Common.Constants" Static="true" />
+  </ItemGroup>
+
 </Project>

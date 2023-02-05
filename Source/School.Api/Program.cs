@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using School.Api.Endpoints;
 using School.Api.Persistence;
-using static School.Api.ApplicationCore.Common.Constants;
 
 var builder = WebApplication.CreateBuilder(args);
 
