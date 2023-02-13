@@ -16,8 +16,8 @@ public static class CourseEndpoints
 
         _ = group.MapGet(CoursesRoutes.Root, async ([FromServices] SchoolDbContext schoolDbContext, IMapper mapper) =>
         {
-            var coursesResponse = ApiResponseDto<IEnumerable<CourseDto>>.Create(
-                    mapper.Map<IEnumerable<CourseDto>>(await schoolDbContext.Courses.ToListAsync())
+            var coursesResponse = ApiResponseDto<IReadOnlyCollection<CourseDto>>.Create(
+                    mapper.Map<IReadOnlyCollection<CourseDto>>(await schoolDbContext.Courses.ToListAsync())
                 );
 
             return Results.Ok(coursesResponse);
