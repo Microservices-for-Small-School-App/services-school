@@ -1,9 +1,8 @@
-﻿namespace School.Api.Data.Dtos
-{
-    public class PersonDto
-    {
-        public string? Id { get; set; }
+﻿namespace School.Api.Data.Dtos;
 
-        public string? Name { get; set; }
-    }
+public class PersonDto
+{
+    public string? Id { get; set; }
+
+    public string? Name { get; set; }
 }

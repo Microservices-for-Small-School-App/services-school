@@ -1,9 +1,6 @@
-﻿namespace School.Api.Data.Dtos
+﻿namespace School.Api.Data.Dtos;
+
+public class CourseDto : CreateCourseDto
 {
-
-    public class CourseDto : CreateCourseDto
-    {
-        public Guid Id { get; set; }
-    }
-
+    public Guid Id { get; set; }
 }
