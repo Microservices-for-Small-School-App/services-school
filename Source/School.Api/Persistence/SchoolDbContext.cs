@@ -2,21 +2,20 @@
 using School.Api.Data.Entities;
 using School.Api.Persistence.SeedData;
 
-namespace School.Api.Persistence
+namespace School.Api.Persistence;
+
+public class SchoolDbContext : DbContext
 {
-    public class SchoolDbContext : DbContext
+    public SchoolDbContext(DbContextOptions<SchoolDbContext> options) : base(options)
     {
-        public SchoolDbContext(DbContextOptions<SchoolDbContext> options) : base(options)
-        {
-        }
+    }
 
-        public DbSet<Course> Courses => Set<Course>();
+    public DbSet<Course> Courses => Set<Course>();
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
 
-            builder.ApplyConfiguration(new CourseData());
-        }
+        builder.ApplyConfiguration(new CourseData());
     }
 }

@@ -7,7 +7,7 @@
 
         public string? Message { get; set; }
 
-        public DateTime DateRequested => DateTime.UtcNow;
+        public DateTimeOffset DateRequested => DateTimeOffset.UtcNow;
 
         public T? Data { get; set; }
 
