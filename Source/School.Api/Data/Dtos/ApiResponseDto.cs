@@ -1,25 +1,22 @@
-﻿namespace School.Api.Data.Dtos
+﻿namespace School.Api.Data.Dtos;
+
+public record ApiResponseDto<T>
 {
+    public bool Success { get; set; }
 
-    public record ApiResponseDto<T>
+    public string? Message { get; set; }
+
+    public DateTimeOffset DateRequested => DateTimeOffset.UtcNow;
+
+    public T? Data { get; set; }
+
+    public static ApiResponseDto<T> Create(T? data = default, string message = "Success", bool success = true)
     {
-        public bool Success { get; set; }
-
-        public string? Message { get; set; }
-
-        public DateTime DateRequested => DateTime.UtcNow;
-
-        public T? Data { get; set; }
-
-        public static ApiResponseDto<T> Create(T? data = default, string message = "Success", bool success = true)
+        return new()
         {
-            return new()
-            {
-                Success = success,
-                Message = message,
-                Data = data
-            };
-        }
+            Success = success,
+            Message = message,
+            Data = data
+        };
     }
-
 }

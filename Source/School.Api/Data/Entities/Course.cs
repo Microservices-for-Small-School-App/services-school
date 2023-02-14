@@ -1,19 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace School.Api.Data.Entities
+namespace School.Api.Data.Entities;
+
+public class Course : BaseEntity
 {
+    [Required]
+    public Guid CourseId { get; set; }
 
-    public class Course : BaseEntity
-    {
-        [Required]
-        public Guid CourseId { get; set; }
+    [Required]
+    public string? Name { get; set; }
 
-        [Required]
-        public string? Name { get; set; }
+    public int Duration { get; set; }
 
-        public int Duration { get; set; }
-
-        public string? Description { get; set; }
-    }
-
+    public string? Description { get; set; }
 }
