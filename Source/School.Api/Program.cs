@@ -1,7 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using School.Api.ApplicationCore.Interfaces;
+using School.Api.Business;
 using School.Api.Configurations;
 using School.Api.Endpoints;
 using School.Api.Persistence;
+using School.Api.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +13,10 @@ _ = builder.Services.AddDbContext<SchoolDbContext>(options =>
                 options.UseInMemoryDatabase(InMemoryDatabase.Name));
 
 _ = builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
+
+_ = builder.Services.AddScoped<ICoursesBusiness, CoursesBusiness>();
+
+_ = builder.Services.AddScoped<ICoursesRepository, CoursesRepository>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 _ = builder.Services.AddEndpointsApiExplorer();
