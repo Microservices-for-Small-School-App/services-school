@@ -21,7 +21,12 @@ public static class CourseEndpoints
                 );
 
             return Results.Ok(coursesResponse);
-        });
+        })
+          .AllowAnonymous()
+          .WithName("GetAllCourses")
+          .Produces<ApiResponseDto<IReadOnlyCollection<CourseDto>>>(StatusCodes.Status200OK)
+          .ProducesProblem(StatusCodes.Status500InternalServerError)
+          .WithOpenApi();
 
     }
 
