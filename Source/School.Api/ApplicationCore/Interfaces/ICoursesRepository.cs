@@ -4,6 +4,6 @@ namespace School.Api.ApplicationCore.Interfaces;
 
 public interface ICoursesRepository
 {
-    Task<IEnumerable<CourseDto>> GetAllCourses();
+    Task<IReadOnlyCollection<CourseDto>> GetAllCourses();
 }
 
