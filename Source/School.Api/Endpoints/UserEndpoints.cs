@@ -17,7 +17,12 @@ public static class UserEndpoints
                 UserId = id,
                 Message = $"Hello {name}, Welcome to Minimal API World !!"
             });
-        });
+        })
+          .AllowAnonymous()
+          .WithName("GetUserById")
+          .Produces<ApiResponseDto<dynamic>>(StatusCodes.Status200OK)
+          .ProducesProblem(StatusCodes.Status500InternalServerError)
+          .WithOpenApi();
 
         _ = group.MapPost(UsersRoutes.Root, ([FromBody] PersonDto person) =>
         {
@@ -26,7 +31,11 @@ public static class UserEndpoints
                 UserId = person.Id,
                 UserName = person.Name,
             });
-        });
+        })
+          .WithName("AddNewUser")
+          .Produces<ApiResponseDto<dynamic>>(StatusCodes.Status200OK)
+          .ProducesProblem(StatusCodes.Status500InternalServerError)
+          .WithOpenApi();
 
     }
 

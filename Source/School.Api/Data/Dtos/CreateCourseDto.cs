@@ -9,4 +9,6 @@ public record CreateCourseDto
     public int Duration { get; set; }
 
     public string? Description { get; set; }
+
+    public string? PictureUrl { get; set; }
 }

@@ -1,29 +1,13 @@
-using Microsoft.EntityFrameworkCore;
-using School.Api.Configurations;
-using School.Api.Endpoints;
-using School.Api.Persistence;
+using School.Api.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add the Services
-_ = builder.Services.AddDbContext<SchoolDbContext>(options =>
-                options.UseInMemoryDatabase(InMemoryDatabase.Name));
-
-_ = builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
+// Add services to the container.
+_ = builder.Services.ConfigureDependedServices();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    // TODO: To be removed once we have .sqlproj
-    using var scope = app.Services.CreateScope();
-    using var context = scope.ServiceProvider.GetService<SchoolDbContext>();
-    _ = (context?.Database.EnsureCreated());
-}
-
-// Endpoints
-app.MapHelloWorldEndpoints();
-app.MapUserEndpoints();
-app.MapCourseEndpoints();
+// Configure the HTTP request pipeline.
+app.ConfigureHttpRequestPipeline();
 
 app.Run();
