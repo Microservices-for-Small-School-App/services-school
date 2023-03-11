@@ -4,35 +4,35 @@ public static class Constants
 {
     public static class HelloWorldRoutes
     {
-        public static string Root { get; } = "/";
+        public static string Root => "/";
 
-        public static string HelloWorld { get; } = "/hw";
+        public static string HelloWorld => "/hw";
 
-        public static string Api { get; } = "/api";
+        public static string Api => "/api";
 
-        public static string ApiV1 { get; } = "/api/v1";
+        public static string ApiV1 => "/api/v1";
     }
 
     public static class UsersRoutes
     {
-        public static string Prefix { get; } = "/api/users";
+        public static string Prefix => "/api/users";
 
-        public static string Root { get; } = "/";
+        public static string Root => "/";
 
-        public static string ActionById { get; } = "/{id}";
+        public static string ActionById => "/{id}";
     }
 
     public static class CoursesRoutes
     {
-        public static string Prefix { get; } = "/api/courses";
+        public static string Prefix => "/api/courses";
 
-        public static string Root { get; } = "/";
+        public static string Root => "/";
 
-        public static string ActionById { get; } = "/api/courses/{Id}";
+        public static string ActionById => "/{Id}";
     }
 
     public static class InMemoryDatabase
     {
-        public static string Name { get; } = "SchoolDatabase";
+        public static string Name => "SchoolDatabase";
     }
 }
