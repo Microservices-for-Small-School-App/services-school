@@ -10,8 +10,8 @@ public static class HttpRequestPipelineExtensions
     {
         if (app.Environment.IsDevelopment())
         {
-            app.UseSwagger();
-            app.UseSwaggerUI();
+            _ = app.UseSwagger();
+            _ = app.UseSwaggerUI();
 
             // TODO: To be removed once we have .sqlproj
             using var scope = app.Services.CreateScope();

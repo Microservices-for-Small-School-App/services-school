@@ -12,8 +12,7 @@ public static class DependedServicesExtensions
 
     public static IServiceCollection ConfigureDependedServices(this IServiceCollection services)
     {
-        _ = services.AddDbContext<SchoolDbContext>(options =>
-                options.UseInMemoryDatabase(InMemoryDatabase.Name));
+        _ = services.AddDbContext<SchoolDbContext>(options => options.UseInMemoryDatabase(InMemoryDatabase.Name));
 
         _ = services.AddAutoMapper(typeof(AutoMapperConfig));
 
