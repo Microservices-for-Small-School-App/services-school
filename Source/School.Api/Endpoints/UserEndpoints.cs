@@ -8,7 +8,7 @@ public static class UserEndpoints
 
     public static void MapUserEndpoints(this IEndpointRouteBuilder routes)
     {
-        var group = routes.MapGroup(UsersRoutes.Prefix).WithTags(nameof(PersonDto));
+        var group = routes.MapGroup(UsersRoutes.Prefix).WithTags("Users");
 
         _ = group.MapGet(UsersRoutes.ActionById, ([FromRoute] string id, [FromQuery] string name) =>
         {
@@ -33,7 +33,7 @@ public static class UserEndpoints
             });
         })
           .WithName("AddNewUser")
-          .Produces<ApiResponseDto<dynamic>>(StatusCodes.Status200OK)
+          .Produces<ApiResponseDto<dynamic>>(StatusCodes.Status201Created)
           .ProducesProblem(StatusCodes.Status500InternalServerError)
           .WithOpenApi();
 
