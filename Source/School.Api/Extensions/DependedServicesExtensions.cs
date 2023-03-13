@@ -4,6 +4,7 @@ using School.Api.Business;
 using School.Api.Configurations;
 using School.Api.Persistence;
 using School.Api.Repositories;
+using Serilog;
 
 namespace School.Api.Extensions;
 
