@@ -4,7 +4,6 @@ using School.Api.Business;
 using School.Api.Configurations;
 using School.Api.Persistence;
 using School.Api.Repositories;
-using Serilog;
 
 namespace School.Api.Extensions;
 
@@ -24,6 +23,11 @@ public static class DependedServicesExtensions
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         _ = services.AddEndpointsApiExplorer();
         _ = services.AddSwaggerGen();
+
+        _ = services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAll", policy => policy.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
+        });
 
         return services;
     }

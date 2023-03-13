@@ -13,6 +13,8 @@ public static class HttpRequestPipelineExtensions
             _ = app.UseSwagger();
             _ = app.UseSwaggerUI();
 
+            app.UseCors("AllowAll");
+
             // TODO: To be removed once we have .sqlproj
             using var scope = app.Services.CreateScope();
             using var context = scope.ServiceProvider.GetService<SchoolDbContext>();
